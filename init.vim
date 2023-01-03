@@ -1,7 +1,7 @@
 set encoding=utf-8
 
 call plug#begin()
-    Plug 'neoclide/coc.nvim', {'branch' : 'release'} 
+    "Plug 'neoclide/coc.nvim', {'branch' : 'release'} 
     Plug 'kovisoft/paredit'
     Plug 'tpope/vim-surround'
     Plug 'phanviet/vim-monokai-pro'
@@ -21,12 +21,12 @@ call plug#begin()
     Plug 'junegunn/goyo.vim'
 
     Plug 'machakann/vim-highlightedyank'
-    Plug 'shortcuts/no-neck-pain.nvim', { 'tag': '*' }
+    "Plug 'shortcuts/no-neck-pain.nvim', { 'tag': '*' }
     Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
     Plug 'mbbill/undotree' 
 
     Plug 'LunarWatcher/auto-pairs'
-    Plug 'williamboman/mason.nvim'
+    "Plug 'williamboman/mason.nvim'
     Plug 'SirVer/ultisnips'
     
     " Neorg
