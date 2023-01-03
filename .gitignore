@@ -1,0 +1,4 @@
+*.swp
+/v:null/*
+/nvim-config
+/nvim-config/*
