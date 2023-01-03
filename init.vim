@@ -15,7 +15,7 @@ call plug#begin()
     " Git
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
-   " Plug 'rbong/vim-flog'
+    Plug 'rbong/vim-flog'
     "Distraction free stuff
     Plug 'junegunn/limelight.vim'
     Plug 'junegunn/goyo.vim'
@@ -28,10 +28,18 @@ call plug#begin()
     Plug 'LunarWatcher/auto-pairs'
     Plug 'williamboman/mason.nvim'
     Plug 'SirVer/ultisnips'
+    
+    " Neorg
+    "Plug 'nvim-treesitter/nvim-treesitter'
+    "Plug 'nvim-neorg/neorg'
 call plug#end()
 
 colorscheme monokai_pro
 set termguicolors
+
+set nocompatible
+filetype plugin on
+syntax on
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -50,4 +58,4 @@ set updatetime=300
 " Ignore case in a pattern
 set ignorecase
 
-
+"source neorg.lua
