@@ -10,7 +10,8 @@ call plug#begin()
     Plug 'preservim/nerdcommenter'
     Plug 'itchyny/lightline.vim'
     Plug 'lukas-reineke/indent-blankline.nvim'
-	" CSV
+
+    " CSV
 	Plug 'chrisbra/csv.vim'
     " Git
     Plug 'airblade/vim-gitgutter'
@@ -28,6 +29,10 @@ call plug#begin()
     Plug 'LunarWatcher/auto-pairs'
     "Plug 'williamboman/mason.nvim'
     Plug 'SirVer/ultisnips'
+    Plug 'yamatsum/nvim-cursorline'
+
+    "Presentation plugin
+    "Plug 'Chaitanyabsprip/present.nvim'
     
     " Neorg
     "Plug 'nvim-treesitter/nvim-treesitter'
@@ -58,4 +63,4 @@ set updatetime=300
 " Ignore case in a pattern
 set ignorecase
 
-"source neorg.lua
+"source cursorline.lua
