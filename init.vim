@@ -1,8 +1,6 @@
 set encoding=utf-8
 
 call plug#begin()
-    Plug 'neoclide/coc.nvim', {'branch' : 'release'} 
-    Plug 'kovisoft/paredit'
     Plug 'tpope/vim-surround'
     Plug 'phanviet/vim-monokai-pro'
     Plug 'scrooloose/nerdtree'
@@ -21,16 +19,18 @@ call plug#begin()
     Plug 'junegunn/goyo.vim'
 
     Plug 'machakann/vim-highlightedyank'
-    Plug 'shortcuts/no-neck-pain.nvim', { 'tag': '*' }
-    Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
     Plug 'mbbill/undotree' 
 
     Plug 'LunarWatcher/auto-pairs'
-    Plug 'williamboman/mason.nvim'
-    Plug 'SirVer/ultisnips'
-    
+    "Plug 'williamboman/mason.nvim'
+    "Plug 'SirVer/ultisnips'
+    "Plug 'vimwiki/vimwiki'
+
+    Plug 'phaazon/hop.nvim'
+    Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.1.0'}
     " Neorg
-    "Plug 'nvim-treesitter/nvim-treesitter'
+    "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
     "Plug 'nvim-neorg/neorg'
 call plug#end()
 
@@ -41,6 +41,7 @@ set nocompatible
 filetype plugin on
 syntax on
 
+let mapleader = ","
 map <C-n> :NERDTreeToggle<CR>
 
 set mouse=a
@@ -52,10 +53,35 @@ set shiftwidth=4
 set expandtab
 
 " Command line two symbols high
-set cmdheight=2
+set cmdheight=1
 " idle timeout write to swap
 set updatetime=300
 " Ignore case in a pattern
 set ignorecase
 
 "source neorg.lua
+
+lua require'hop'.setup()
+
+
+
+map <s-f> :HopWord<CR>
+
+map <leader>d :Limelight<CR>:Goyo<CR>
+map <leader>D :Limelight!<CR>:Goyo!<CR>
+
+" Expand or jump in insert mode
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+
+" Jump forward through tabstops in visual mode
+smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+
+
+" Jump backward through snippet tabstops with Shift-Tab (for example)
+imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+
+lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
+
+luafile luasnip.lua
+
