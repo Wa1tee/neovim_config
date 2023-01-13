@@ -6,7 +6,12 @@ call plug#begin()
     Plug 'scrooloose/nerdtree'
     Plug 'godlygeek/tabular'
     Plug 'preservim/nerdcommenter'
-    Plug 'itchyny/lightline.vim'
+    "Plug 'itchyny/lightline.vim'
+    
+    "Lualine and icons
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'kyazdani42/nvim-web-devicons'
+
     Plug 'lukas-reineke/indent-blankline.nvim'
 	" CSV
 	Plug 'chrisbra/csv.vim'
@@ -25,8 +30,10 @@ call plug#begin()
     "Plug 'williamboman/mason.nvim'
     "Plug 'SirVer/ultisnips'
     "Plug 'vimwiki/vimwiki'
+    Plug 'rmagatti/auto-session'
 
     Plug 'phaazon/hop.nvim'
+    "Plug 'ggandor/leap-spooky.nvim'
     Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.1.0'}
     " Neorg
     "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -84,4 +91,8 @@ smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '
 lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
 
 luafile luasnip.lua
+"luafile spooky.lua
+luafile autosession.lua
+set sessionoptions+=winpos,terminal,folds
 
+luafile lualine.lua
