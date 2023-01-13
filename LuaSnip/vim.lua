@@ -10,7 +10,11 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 return{
+    s("plug", {
+        t({"Plug '"}),
+        i(1),
+        t({"'",""})
+    }),
 
 }
-
 

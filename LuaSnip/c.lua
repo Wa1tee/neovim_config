@@ -10,7 +10,20 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 return{
-
+    s("for", {
+        t("for(int "),
+        i(1),
+        t("="),
+        i(2),
+        t("; "),
+        rep(1),
+        t("<"),
+        i(3),
+        t("; "),
+        rep(1),
+        t({"++){", "    ",}),
+        i(4),
+        t({"", "}"})
+    }),
 }
-
 
