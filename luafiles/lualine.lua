@@ -2,8 +2,11 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'wombat',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    -- fancy separators
+    --component_separators = { left = '', right = ''},
+    --section_separators = { left = '', right = ''},
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -27,7 +30,7 @@ require('lualine').setup {
   },
   inactive_sections = {
     lualine_a = {},
-    lualine_b = {},
+    lualine_b = {'diff'},
     lualine_c = {'filename'},
     lualine_x = {'location'},
     lualine_y = {},
