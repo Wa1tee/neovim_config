@@ -35,6 +35,12 @@ call plug#begin()
     Plug 'williamboman/mason.nvim'
     Plug 'williamboman/mason-lspconfig.nvim'
     Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'saadparwaiz1/cmp_luasnip'
 
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -44,6 +50,8 @@ call plug#end()
 
 colorscheme monokai_pro
 set termguicolors
+
+set completeopt=menu,menuone,noselect
 
 set nocompatible
 filetype plugin on
@@ -72,8 +80,10 @@ set updatetime=300
 set ignorecase
 
 
+luafile ~/.config/nvim/luafiles/luasnip.lua
 luafile ~/.config/nvim/luafiles/hop.lua
 luafile ~/.config/nvim/luafiles/mason.lua
 luafile ~/.config/nvim/luafiles/lualine.lua
-luafile ~/.config/nvim/luafiles/luasnip.lua
 luafile ~/.config/nvim/luafiles/treesitter.lua
+luafile ~/.config/nvim/luafiles/cmp.lua
+
