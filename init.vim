@@ -27,20 +27,32 @@ call plug#begin()
 
     Plug 'LunarWatcher/auto-pairs'
     
-    Plug 'phaazon/hop.nvim'
+    "Plug 'phaazon/hop.nvim'
+    Plug 'ggandor/leap.nvim'
+
     "Plug 'ggandor/leap-spooky.nvim'
     Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.1.0'}
     
     " LSP
     Plug 'williamboman/mason.nvim'
     Plug 'williamboman/mason-lspconfig.nvim'
+
+    Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v1.x'}
+
     Plug 'neovim/nvim-lspconfig'
+    
+    "CMP
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/cmp-nvim-lua'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'saadparwaiz1/cmp_luasnip'
+
+    Plug 'NMAC427/guess-indent.nvim'
+
+
 
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -68,8 +80,8 @@ set mouse=a
 set smartcase
 set number
 " Tabs to be 4 wide and turned into spaces
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Command line two symbols high
@@ -79,11 +91,16 @@ set updatetime=300
 " Ignore case in a pattern
 set ignorecase
 
+" This is set in lsp.lua
+"set signcolumn=yes
 
 luafile ~/.config/nvim/luafiles/luasnip.lua
-luafile ~/.config/nvim/luafiles/hop.lua
+"luafile ~/.config/nvim/luafiles/hop.lua
 luafile ~/.config/nvim/luafiles/mason.lua
 luafile ~/.config/nvim/luafiles/lualine.lua
 luafile ~/.config/nvim/luafiles/treesitter.lua
-luafile ~/.config/nvim/luafiles/cmp.lua
+"luafile ~/.config/nvim/luafiles/cmp.lua
+luafile ~/.config/nvim/luafiles/lsp.lua
+luafile ~/.config/nvim/luafiles/leap.lua
+luafile ~/.config/nvim/luafiles/indent.lua
 
