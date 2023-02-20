@@ -10,7 +10,9 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 return{
-
+  s("cr", {
+      t({"<CR>" }),
+  }),
 }
 
 

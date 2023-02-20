@@ -25,7 +25,7 @@ require('lualine').setup {
     lualine_b = {'branch', 'diff', 'diagnostics'},
     --lualine_c = {'filename',require('auto-session-library').current_session_name},
     lualine_c = {'filename',},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {'', 'encoding', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
@@ -37,7 +37,14 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
+  --tabline = {
+    --lualine_a = {'tabs',},
+    --lualine_b = {},
+    --lualine_c = {},
+    --lualine_x = {},
+    --lualine_y = {},
+    --lualine_z = {}
+  --},
   winbar = {},
   inactive_winbar = {},
   extensions = {}
